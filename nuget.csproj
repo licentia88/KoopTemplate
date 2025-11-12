@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>.net9.0</TargetFramework>
+        <IncludeContentInPack>true</IncludeContentInPack>
+        <IncludeBuildOutput>true</IncludeBuildOutput>
+        <ContentTargetFolders>content</ContentTargetFolders>
+        <EnableDefaultItems>false</EnableDefaultItems>
+        <NoDefaultExcludes>true</NoDefaultExcludes>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+<!--        <PackageReadmeFile>README.md</PackageReadmeFile>-->
+        <PackageOutputPath>.</PackageOutputPath>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Content Include=".template.config\template.json;
+                      KoopTemplate.Client\**\*;
+                      KoopTemplate.Redis\**\*;
+                      KoopTemplate.Server\**\*;
+                      KoopTemplate.Shared\**\*;
+                      KoopTemplate.Web\**\*;
+                      KoopTemplate.Web.Shared\**\*;
+                      KoopTemplate.WebTemplate\**\*"
+
+                 Exclude="**\bin\**\*;**\obj\**\*" />
+        <Compile Remove="**\*" />
+<!--        <None Include="README.md" Pack="true" PackagePath="" />-->
+    </ItemGroup>
+
+
+    <PropertyGroup>
+        <PackageType>Template</PackageType>
+        <Version>1.0.1</Version>
+        <PackageId>KoopTemplate</PackageId>
+        <Title>Koop Template</Title>
+        <Company>Koopbank</Company>
+        <Authors>ASIM GUNDUZ</Authors>
+        <Copyright>Koopbank © 2025</Copyright>
+        <Description>A ready-to-use template for Koop Projects</Description>
+        <PackageCopyright>Koopbank © 2025</PackageCopyright>
+        <PackageProjectUrl>https://github.com/licentia88/MagicOnionGenericTemplate</PackageProjectUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/licentia88/MagicOnionGenericTemplate</RepositoryUrl>
+    </PropertyGroup>
+</Project>

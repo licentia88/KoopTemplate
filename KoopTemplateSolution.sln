@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoopTemplate.Grpc", "KoopTemplate.Grpc\KoopTemplate.Grpc.csproj", "{B736E9F2-B9CB-4A9E-80EE-37E91127863B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".template.config", ".template.config", "{54BB6349-450B-464A-B35E-5821ABD9EC2A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B736E9F2-B9CB-4A9E-80EE-37E91127863B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B736E9F2-B9CB-4A9E-80EE-37E91127863B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B736E9F2-B9CB-4A9E-80EE-37E91127863B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B736E9F2-B9CB-4A9E-80EE-37E91127863B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

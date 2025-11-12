@@ -1,0 +1,48 @@
+﻿{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Koop",
+  "classifications": [ "Web", "gRPC", "Solution", "Template" ],
+  "identity": "KoopTemplate.Solution.Template",
+  "name": "KoopTemplate Multi-Project Solution",
+  "shortName": "koop-solution",
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  },
+  "sourceName": "KoopTemplate",
+  "preferNameDirectory": true,
+  "symbols": {
+    "solutionName": {
+      "type": "parameter",
+      "datatype": "string",
+      "replaces": "KoopTemplate",
+      "defaultValue": "KoopTemplateSolution"
+    }
+  },
+  "primaryOutputs": [
+    {
+      "path": "KoopTemplate.sln"
+    }
+  ],
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "exclude": [
+            ".vs/**",
+            ".template_config/**",
+            "README.md",
+            ".DS_Store",
+            ".gitignore",
+            ".git/**",
+            ".idea/**",
+            ".vscode/**",
+            "bin/**",
+            "obj/**",
+            "KoopTemplate.*.nupkg"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -13,12 +13,12 @@
 
     <ItemGroup>
         <Content Include=".template.config\template.json;
-                      KoopTemplate.Client\**\*;
+                      KoopTemplate.Grpc\**\*;
                       KoopTemplate.Redis\**\*;
                       KoopTemplate.Server\**\*;
                       KoopTemplate.Shared\**\*;
                       KoopTemplate.Web\**\*;
-                      KoopTemplate.Web.Shared\**\*;
+                 KoopTemplateSolution     KoopTemplate.Web.Shared\**\*;
                       KoopTemplate.WebTemplate\**\*"
 
                  Exclude="**\bin\**\*;**\obj\**\*" />
@@ -29,7 +29,7 @@
 
     <PropertyGroup>
         <PackageType>Template</PackageType>
-        <Version>1.0.1</Version>
+        <Version>1.0.2</Version>
         <PackageId>KoopTemplate</PackageId>
         <Title>Koop Template</Title>
         <Company>Koopbank</Company>

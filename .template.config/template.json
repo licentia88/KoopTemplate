@@ -16,21 +16,22 @@
       "type": "parameter",
       "description": "The target framework for the project.",
       "replaces": "{framework}",
-      "defaultValue": "net8.0",
+      "defaultValue": "net9.0",
       "datatype": "choice",
       "choices": [
-        {
-          "choice": "net8.0",
-          "choice": "net9.0",
-          "choice": "net10.0"
-        }
+        { "choice": "net9.0" },
+        { "choice": "net10.0" }
       ]
     },
-    "SSL_CONFIG": {
+    "ApiStyle": {
       "type": "parameter",
-      "datatype": "bool",
-      "defaultValue": "true",
-      "description": "Configures GRPC connections with SSL"
+      "description": "Select API style.",
+      "datatype": "choice",
+      "defaultValue": "Rest",
+      "choices": [
+        { "choice": "Rest", "description": "Use KoopTemplate.Server (REST API)" },
+        { "choice": "Grpc", "description": "Use KoopTemplate.Grpc (gRPC)" }
+      ]
     }
   },
   "sources": [
@@ -48,10 +49,22 @@
             ".vscode/**",
             "bin/**",
             ".obj/**",
-            "KoopTemplate.Server/Migrations/**",
+            "KoopTemplate.Rest/Migrations/**",
             "KoopTemplate.Grpc/Migrations/**",
             "nuget.csproj",
             "KoopTemplate.*.nupkg"
+          ]
+        },
+        {
+          "condition": "(ApiStyle == \"Grpc\")",
+          "exclude": [
+            "KoopTemplate.Rest/**"
+          ]
+        },
+        {
+          "condition": "(ApiStyle == \"Rest\")",
+          "exclude": [
+            "KoopTemplate.Grpc/**"
           ]
         }
       ]

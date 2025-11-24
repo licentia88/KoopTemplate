@@ -1,0 +1,6 @@
+@KoopTemplate.Rest_HostAddress = http://localhost:5080
+
+GET {{KoopTemplate.Rest_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

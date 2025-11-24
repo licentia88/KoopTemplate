@@ -4,8 +4,23 @@
         <TargetFramework>net9.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <!-- Do not pack this project itself; template packing is handled by the template-pack project at the solution root -->
-        <IsPackable>false</IsPackable>
+        <!-- Package settings to produce a dotnet new template nupkg -->
+        <IsPackable>true</IsPackable>
+        <PackageId>KoopTemplate.Grpc.Template</PackageId>
+        <Version>1.0.0</Version>
+        <Authors>Koop</Authors>
+        <Company>Koop</Company>
+        <Description>Koop gRPC project template for dotnet new</Description>
+        <PackageTags>template;dotnetnew;grpc</PackageTags>
+        <!-- Do not include compiled build output in the package (we only want the template files) -->
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <!-- Optional: generate a package when building in CI or when dotnet pack is invoked -->
     </PropertyGroup>
+
+    <!-- Pack all source/template files into the nupkg root so the template engine can discover .template.config/template.json -->
+    <ItemGroup>
+        <!-- Include all files except build artifacts. They will be placed at the package root. -->
+        <None Include="**\*.*" Pack="true" PackagePath="" Exclude="bin\**;obj\**" />
+    </ItemGroup>
 
 </Project>

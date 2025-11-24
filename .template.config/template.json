@@ -1,7 +1,7 @@
 ﻿{
   "$schema": "http://json.schemastore.org/template",
   "author": "Koop",
-  "classifications": [ "Web", "gRPC", "Solution", "Template" ],
+  "classifications": [ "Koop", "Koopbank", "Template" ],
   "identity": "KoopTemplate.Solution.Template",
   "name": "KoopTemplate Multi-Project Solution",
   "shortName": "koop-solution",
@@ -12,18 +12,27 @@
   "sourceName": "KoopTemplate",
   "preferNameDirectory": true,
   "symbols": {
-    "solutionName": {
+    "Framework": {
       "type": "parameter",
-      "datatype": "string",
-      "replaces": "KoopTemplate",
-      "defaultValue": "KoopTemplateSolution"
+      "description": "The target framework for the project.",
+      "replaces": "{framework}",
+      "defaultValue": "net8.0",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "net8.0",
+          "choice": "net9.0",
+          "choice": "net10.0"
+        }
+      ]
+    },
+    "SSL_CONFIG": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true",
+      "description": "Configures GRPC connections with SSL"
     }
   },
-  "primaryOutputs": [
-    {
-      "path": "KoopTemplate.sln"
-    }
-  ],
   "sources": [
     {
       "modifiers": [
@@ -38,7 +47,10 @@
             ".idea/**",
             ".vscode/**",
             "bin/**",
-            "obj/**",
+            ".obj/**",
+            "KoopTemplate.Server/Migrations/**",
+            "KoopTemplate.Grpc/Migrations/**",
+            "nuget.csproj",
             "KoopTemplate.*.nupkg"
           ]
         }

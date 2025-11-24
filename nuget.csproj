@@ -18,7 +18,7 @@
                       KoopTemplate.Server\**\*;
                       KoopTemplate.Shared\**\*;
                       KoopTemplate.Web\**\*;
-                 KoopTemplateSolution     KoopTemplate.Web.Shared\**\*;
+                      KoopTemplate.Web.Shared\**\*;
                       KoopTemplate.WebTemplate\**\*"
 
                  Exclude="**\bin\**\*;**\obj\**\*" />

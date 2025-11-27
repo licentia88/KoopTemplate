@@ -1,0 +1,26 @@
+﻿@inject NavigationManager Nav
+
+<Router AppAssembly="@(typeof(Program).Assembly)">
+    <Found Context="routeData">
+        <AuthorizeRouteView RouteData="@routeData" DefaultLayout="typeof(MainLayout)">
+            <NotAuthorized>
+
+                <MudPaper Height="100px" Width="100%">
+                    <MudContainer Fixed="true">
+                        <MudButton Color="Color.Primary" Variant="Variant.Filled" Size="Size.Small"
+                                   OnClick="@(() => Nav.NavigateTo("/login"))">
+                            Please  Login to continue.
+                        </MudButton>
+                    </MudContainer>
+                </MudPaper>
+
+            </NotAuthorized>
+        </AuthorizeRouteView>
+    </Found>
+
+    <NotFound>
+        <LayoutView Layout="typeof(MainLayout)">
+            <NotFound />
+        </LayoutView>
+    </NotFound>
+</Router>

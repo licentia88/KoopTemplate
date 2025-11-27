@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoopTemplate.Repository", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoopTemplate.RestClient", "KoopTemplate.RestClient\KoopTemplate.RestClient.csproj", "{D81E0A28-2129-4591-A35B-CC311C75E090}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoopTemplate.Web", "KoopTemplate.Web\KoopTemplate.Web.csproj", "{73302A10-3C80-445F-8E6F-4396FCBE8197}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,5 +40,9 @@ Global
 		{D81E0A28-2129-4591-A35B-CC311C75E090}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D81E0A28-2129-4591-A35B-CC311C75E090}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D81E0A28-2129-4591-A35B-CC311C75E090}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73302A10-3C80-445F-8E6F-4396FCBE8197}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73302A10-3C80-445F-8E6F-4396FCBE8197}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73302A10-3C80-445F-8E6F-4396FCBE8197}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73302A10-3C80-445F-8E6F-4396FCBE8197}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,8 @@
+﻿.login-shell {
+    min-height: calc(100vh - 48px); /* minus slim appbar height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: radial-gradient(1200px 600px at 20% -10%, rgba(99,102,241,.12), transparent), radial-gradient(800px 400px at 100% 0%, rgba(168,85,247,.10), transparent), linear-gradient(180deg, #f7f7fb, #ffffff);
+}

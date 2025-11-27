@@ -4,11 +4,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".template.config", ".templa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoopTemplate.Shared", "KoopTemplate.Shared\KoopTemplate.Shared.csproj", "{CB3982CB-C655-482F-8CED-38F0AE4DE108}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoopTemplate.Rest", "KoopTemplate.Rest\KoopTemplate.Rest.csproj", "{0A8C9E39-92F8-4E70-BB24-807F173CF312}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoopTemplate.RestServer", "KoopTemplate.RestServer\KoopTemplate.RestServer.csproj", "{0A8C9E39-92F8-4E70-BB24-807F173CF312}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoopTemplate.Grpc", "KoopTemplate.Grpc\KoopTemplate.Grpc.csproj", "{F121CB88-7644-4017-93E8-7D3FFE7B386A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoopTemplate.GrpcServer", "KoopTemplate.GrpcServer\KoopTemplate.GrpcServer.csproj", "{F121CB88-7644-4017-93E8-7D3FFE7B386A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoopTemplate.Repository", "KoopTemplate.Repository\KoopTemplate.Repository.csproj", "{9FFC7184-A864-45A3-8F53-6C4677C5791C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoopTemplate.RestClient", "KoopTemplate.RestClient\KoopTemplate.RestClient.csproj", "{D81E0A28-2129-4591-A35B-CC311C75E090}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,5 +34,9 @@ Global
 		{9FFC7184-A864-45A3-8F53-6C4677C5791C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FFC7184-A864-45A3-8F53-6C4677C5791C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FFC7184-A864-45A3-8F53-6C4677C5791C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D81E0A28-2129-4591-A35B-CC311C75E090}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D81E0A28-2129-4591-A35B-CC311C75E090}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D81E0A28-2129-4591-A35B-CC311C75E090}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D81E0A28-2129-4591-A35B-CC311C75E090}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

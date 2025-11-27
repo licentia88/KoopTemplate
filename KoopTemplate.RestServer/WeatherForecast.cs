@@ -1,4 +1,4 @@
-namespace KoopTemplate.Rest;
+namespace KoopTemplate.RestServer;
 
 public class WeatherForecast
 {

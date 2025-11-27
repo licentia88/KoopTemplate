@@ -1,4 +1,4 @@
-// using KoopTemplate.Grpc.Services;
+// using KoopTemplate.GrpcServer.Services;
 using KoopTemplate.Repository.Extensions;
  
 var builder = WebApplication.CreateBuilder(args);

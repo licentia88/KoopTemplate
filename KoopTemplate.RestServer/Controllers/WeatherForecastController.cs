@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace KoopTemplate.Rest.Controllers;
+namespace KoopTemplate.RestServer.Controllers;
 
 [ApiController]
 [Route("[controller]")]

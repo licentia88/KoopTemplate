@@ -1,6 +1,4 @@
 ﻿namespace KoopTemplate.Web.Models;
 
-public class LdapSettings
-{
-    public string LdapServer { get; set; }
-}
+public abstract record LdapSettings(string LdapServer);
+ 

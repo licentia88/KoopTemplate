@@ -1,16 +1,16 @@
 ﻿using System.DirectoryServices.Protocols;
 using System.Net;
 
-namespace KoopTemplate.Web.Models;
+namespace KoopTemplate.Web.Authentication;
 
 public sealed class AdAuthenticator : IAdAuthenticator
 {
     private readonly string _domain;
-    private readonly string? _containerOrServer;
+    private readonly string _containerOrServer;
 
     public string LdapServer { get; set; }
 
-    public AdAuthenticator(string domain, string? containerOrServer = null)
+    public AdAuthenticator(string domain, string containerOrServer = null)
     {
         _domain = domain;
         _containerOrServer = containerOrServer;
@@ -19,15 +19,13 @@ public sealed class AdAuthenticator : IAdAuthenticator
     public bool Validate(string username, string password , string ldapServer)
     {
         try
-        {     
-            using (var connection = new LdapConnection(ldapServer))
-            {
-                connection.AuthType = AuthType.Basic;
-                var credential = new NetworkCredential($"{ldapServer}\\{username}", password);
-                connection.Bind(credential);
+        {
+            using var connection = new LdapConnection(ldapServer);
+            connection.AuthType = AuthType.Basic;
+            var credential = new NetworkCredential($"{ldapServer}\\{username}", password);
+            connection.Bind(credential);
 
-                return true;
-            }
+            return true;
         }
         catch (LdapException ex)
         {

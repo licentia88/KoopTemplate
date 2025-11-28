@@ -1,4 +1,4 @@
-﻿namespace KoopTemplate.Web.Models;
+﻿namespace KoopTemplate.Web.Authentication;
 
 public interface IAdAuthenticator
 {

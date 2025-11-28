@@ -1,11 +1,12 @@
-﻿using KoopTemplate.Web.Models;
+﻿using KoopTemplate.Web.Authentication;
+using KoopTemplate.Web.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace KoopTemplate.Web.Extensions;
 
 public static class DependencyExtensions
 {
-    public static IServiceCollection AddCookieAuthentication(this IServiceCollection services)
+    public static IServiceCollection AddKoopTemplateCookieAuthentication(this IServiceCollection services)
     {
         // AuthN/Z
         services
@@ -51,7 +52,7 @@ public static class DependencyExtensions
         return services;
     }
 
-    public static WebApplicationBuilder AddAuthenticator(this WebApplicationBuilder builder)
+    public static WebApplicationBuilder AddKoopTemplateAuthenticator(this WebApplicationBuilder builder)
     {
         // AD authenticator service
         builder.Services.AddSingleton<IAdAuthenticator>(sp =>
@@ -61,6 +62,13 @@ public static class DependencyExtensions
             ));
         
          
+        return builder;
+    }
+
+    public static WebApplicationBuilder AddKoopTemplateConfigurations(this WebApplicationBuilder builder)
+    {
+        builder.Services.Configure<LdapSettings>(builder.Configuration.GetSection(nameof(LdapSettings)));
+
         return builder;
     }
 }

@@ -1,12 +1,8 @@
 using KoopTemplate.Web.Components;
 using KoopTemplate.Web.Extensions;
-using KoopTemplate.Web.Models;
 using MudBlazor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.Configure<LdapSettings>(builder.Configuration.GetSection("LdapSettings"));
-
-
 
 
 // UI & components
@@ -15,17 +11,23 @@ builder.Services.AddMudServices();
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
-builder.Services.AddCookieAuthentication();
+// Template specific Ayarlar (Extension methofds)
+builder.AddKoopTemplateConfigurations();
+builder.AddKoopTemplateAuthenticator();
+builder.Services.AddKoopTemplateCookieAuthentication();
+builder.Services.AutoRegisterFromKoopTemplateWeb();
+
 
 builder.Services.AddAuthorization();
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddAuthenticationCore();
+builder.Services.AddCascadingAuthenticationState();
 
 // Antiforgery (nice to standardize the header if you later use tokens in forms)
 builder.Services.AddAntiforgery(o => o.HeaderName = "X-CSRF-TOKEN");
 
 // Add MVC controllers so AuthController endpoints are mapped
 builder.Services.AddControllers();
-builder.AddAuthenticator();
 
 var app = builder.Build();
 

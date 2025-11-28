@@ -1,4 +1,5 @@
 ﻿using System.Security.Claims;
+using KoopTemplate.Web.Authentication;
 using KoopTemplate.Web.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -22,7 +23,7 @@ public class AuthController : Controller
     [HttpPost("login")]
     [AllowAnonymous]
     [IgnoreAntiforgeryToken]
-    public async Task<IActionResult> Login([FromForm] LoginRequest login, [FromQuery] string? returnUrl = null)
+    public async Task<IActionResult> Login([FromForm] LoginRequest login, [FromQuery] string returnUrl = null)
     {
         _auth.LdapServer = _configuration.GetValue<string>("LdapSettings:LdapServer");
 

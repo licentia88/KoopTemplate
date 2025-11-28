@@ -1,7 +1,25 @@
-﻿@page "/"
+﻿@using System.Security.Claims
+@attribute [Authorize]
+@page "/"
 
-<PageTitle>Home</PageTitle>
+<h3>Welcome, @_context?.Identity?.Name</h3>
 
-<h1>Hello, world!</h1>
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState> AuthTask { get; set; } 
+    
+    private ClaimsPrincipal _context;
 
-Welcome to your new app.
+    protected override async Task OnInitializedAsync()
+    {
+        var auth = await AuthTask;
+        _context = auth.User;
+    }
+
+
+    protected override Task OnAfterRenderAsync(bool firstRender)
+    {
+        return base.OnAfterRenderAsync(firstRender);
+    }
+
+}
